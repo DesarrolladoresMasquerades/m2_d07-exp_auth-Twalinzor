@@ -36,6 +36,9 @@ app.locals.title = `${capitalized(projectName)} created with Ironlauncher`;
 const index = require("./routes/index");
 app.use("/", index);
 
+const personalRouter = require("./routes/private/personal.route");
+app.use("/profile", personalRouter);
+
 // authRouter needs to be added so paste the following lines:
 const authRouter = require("./routes/auth.routes"); // <== has to be added
 app.use("/", authRouter); // <== has to be added

@@ -6,7 +6,7 @@ const userSchema = new Schema(
       type: String,
       trim: true,
       required: [true, "Username is required."],
-      unique: true
+      unique: true,
     },
     email: {
       type: String,
@@ -15,15 +15,21 @@ const userSchema = new Schema(
       match: [/^\S+@\S+\.\S+$/, "Please use a valid email address."],
       unique: true,
       lowercase: true,
-      trim: true
+      trim: true,
     },
     passwordHash: {
       type: String,
-      required: [true, "Password is required."]
-    }
+      required: [true, "Password is required."],
+    },
+    imgUrl: {
+      type: String,
+      default:
+        "https://img.favpng.com/17/23/14/computer-icons-reddit-image-portable-network-graphics-pepe-the-frog-png-favpng-y5Ptzq3Ac2vczG7YL5x13Tz5N.jpg",
+    },
   },
+
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
